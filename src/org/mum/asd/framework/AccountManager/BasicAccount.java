@@ -22,6 +22,12 @@ public class BasicAccount extends AAccount {
 
     }
 
+	@Override
+	public double getInterestAmount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 //	@Override
 //	public AParty getParty() {
 //		// TODO Auto-generated method stub
