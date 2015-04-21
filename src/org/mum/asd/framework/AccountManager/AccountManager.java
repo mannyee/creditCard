@@ -61,6 +61,7 @@ public class AccountManager implements ISenderColleague {
      public void deposite(IAccount account, ITransaction transaction) {
         double balance = account.getBalance()+ transaction.getAmount();
         account.setBalance(balance);
+         System.out.println(""+account.getBalance());
         this.send(new Message(Message.UPDATE_ACCOUNT_TABLE, true));
     }
 

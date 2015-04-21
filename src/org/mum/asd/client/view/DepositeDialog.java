@@ -23,7 +23,7 @@ public class DepositeDialog extends AccountDialog {
     protected void JButtonOK_actionPerformed(java.awt.event.ActionEvent event) {
         String name = JTextField_NAME.getText();
         String amount = JTextField_Deposit.getText();
-        new DepositeController().deposite(this.getAccnr(), amount, name);
+        new DepositeController().deposite(this.getAccnr(), name, amount);
         dispose();
         setVisible(false);
     }

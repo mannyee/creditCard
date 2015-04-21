@@ -23,23 +23,23 @@ import org.mum.asd.framework.transaction.WithDrawl;
  */
 public class DepositeController implements BaseController {
 
-    private AccountFrm accountFrm;
     private AccountManager accountManager;
 
     public DepositeController() {
-        accountFrm = AppInitiator.getAccForm();
         accountManager = AppInitiator.getAccManger();
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        AccountDialog dialog = new DepositeDialog(accountFrm, "");
+        AccountFrm accountFrm = AppInitiator.getAccForm();
+         String accnr = accountFrm.getAccountNo();
+        AccountDialog dialog = new DepositeDialog(accountFrm, accnr);
         dialog.setBounds(430, 15, 275, 140);
         dialog.show();
     }
 
     public void deposite(String accNo, String name, String amount) {
-        IAccount account = new BasicAccount();
+        IAccount account = accountManager.getAccountById(accNo);
         ITransaction iTransaction = new WithDrawl();
         iTransaction.setAmount(Double.parseDouble(amount));
         iTransaction.setName(name);

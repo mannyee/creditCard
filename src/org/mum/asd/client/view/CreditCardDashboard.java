@@ -65,6 +65,7 @@ public class CreditCardDashboard extends AccountFrm {
 
 //        JButton_CompAC.addActionListener(new BillController());
         JButton_PerAC.addActionListener(new CardAddController());
+        JButton_Deposit.addActionListener(new DepositeController());
 //        JButton_Deposit.addActionListener(new DepositeController());
 //        JButton_Withdraw.addActionListener(new WithdrawController());
     }
@@ -108,7 +109,7 @@ public class CreditCardDashboard extends AccountFrm {
 
             rowdata[2] = ((CreditCardAccount)acc).getExpiryDate();
             rowdata[3] = acc.getType();
-            rowdata[5] = acc.getBalance();
+            rowdata[4] = acc.getBalance();
             model.addRow(rowdata);
         }
         mediator.send(new Message(Message.ACCOUNT_SELECTED, false));

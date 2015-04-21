@@ -27,9 +27,9 @@ public class DepositButton extends JButton implements IReceiverColleague {
 
     @Override
     public void receive(Message message) {
-//        if (message.getAbout().equalsIgnoreCase(Message.ACCOUNT_SELECTED)) {
-//            this.setEnabled(message.isStatus());
-//        }
+        if (message.getAbout().equalsIgnoreCase(Message.ACCOUNT_SELECTED)) {
+            this.setEnabled(message.isStatus());
+        }
     }
 
 }
