@@ -5,7 +5,6 @@
  */
 package org.mum.asd.framework.main;
 
-import org.mum.asd.client.view.BankSystemDashboard;
 import org.mum.asd.client.view.CreditCardDashboard;
 import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
@@ -17,8 +16,8 @@ import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 public class Main {
     public static void main(String[] args) {
         AppInitiator.getMediator();
-        AccountFrm form = new BankSystemDashboard();
-//        form.setVisible(true);
+        AccountFrm form = new CreditCardDashboard();
+
         AppInitiator.setAccForm(form);
         
         AppInitiator.getAccForm().setVisible(true);
