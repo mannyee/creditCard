@@ -81,38 +81,38 @@ public class CreditCardDashboard extends AccountFrm {
         return accnr;
     }
 
-//    @Override
-//    protected AccountEntryDataModel setTableModel(Mediator mediator) {
-//        AccountEntryDataModel model = new AccountEntryDataModel(mediator);
-//
-//        model.addColumn("Name");
-//        model.addColumn("CC number");
-//        model.addColumn("Exp date");
-//        model.addColumn("Type");
-//        model.addColumn("Balance");
-//
-//        return model;
-//    }
-//
-//    @Override
-//    public void loadTableWithData() {
-//
-//
-//        model.setRowCount(0);
-//        AccountManager ac = AppInitiator.getAccManger();
-//        for (IAccount acc : ac.getAccountList()) {
-//            rowdata = new Object[8];
-//             AParty aParty = (AParty) acc.getParty();
-//            rowdata[0] = aParty.getName();
-//           
-//            rowdata[1] = acc.getAcctNumber();
-//
-//            rowdata[2] = acc.getExpiryDate();
-//            rowdata[3] = aParty.getType();
-//            rowdata[5] = acc.getBalance();
-//            model.addRow(rowdata);
-//        }
-//        mediator.send(new Message(Message.ACCOUNT_SELECTED, false));
-//    }
+    @Override
+    protected AccountEntryDataModel setTableModel(Mediator mediator) {
+        AccountEntryDataModel model = new AccountEntryDataModel(mediator);
+
+        model.addColumn("Name");
+        model.addColumn("CC number");
+        model.addColumn("Exp date");
+        model.addColumn("Type");
+        model.addColumn("Balance");
+
+        return model;
+    }
+
+    @Override
+    public void loadTableWithData() {
+
+
+        model.setRowCount(0);
+        AccountManager ac = AppInitiator.getAccManger();
+        for (IAccount acc : ac.getAccountList()) {
+            rowdata = new Object[8];
+             AParty aParty = (AParty) acc.getParty();
+            rowdata[0] = aParty.getName();
+           
+            rowdata[1] = acc.getAcctNumber();
+
+            rowdata[2] = "";
+            rowdata[3] = aParty.getType();
+            rowdata[5] = acc.getBalance();
+            model.addRow(rowdata);
+        }
+        mediator.send(new Message(Message.ACCOUNT_SELECTED, false));
+    }
 
 }
