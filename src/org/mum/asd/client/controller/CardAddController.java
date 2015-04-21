@@ -25,7 +25,7 @@ public class CardAddController implements BaseController {
         dialog.show();
     }
 
-    public void createAccount(Enum accountType, String name, String city, String state, String street, String zip, String accNum, String expdate, String email) {
+    public void createAccount(CardAccountType accountType, String name, String city, String state, String street, String zip, String accNum, String expdate, String email) {
         IAccount account = AppFactory.getFactory(CardAccountType.MAINACC).getAccount(accountType);
         CreditCardAccount aAccount = (CreditCardAccount) account;
         aAccount.setAcctNumber(accNum);

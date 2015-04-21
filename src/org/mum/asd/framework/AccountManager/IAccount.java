@@ -5,6 +5,7 @@
  */
 package org.mum.asd.framework.AccountManager;
 
+import java.util.Date;
 import org.mum.asd.framework.partyPattern.IParty;
 import org.mum.asd.framework.transaction.ITransaction;
 
@@ -21,7 +22,7 @@ public interface IAccount {
     public Double getBalance();
 
     public String getAcctNumber();
-
+    
     public void setAcctNumber(String accNum);
 
     public IParty getParty();

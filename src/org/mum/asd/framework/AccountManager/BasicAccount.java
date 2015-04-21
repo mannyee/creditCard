@@ -8,7 +8,6 @@ public class BasicAccount extends AAccount {
     @Override
     public void addEntry(ITransaction transaction) {
         // TODO Auto-generated method stub
-
     }
 
     public double getCurrentBalance() {
@@ -18,7 +17,7 @@ public class BasicAccount extends AAccount {
 
     @Override
     public void setParty(IParty iParty) {
-		// TODO Auto-generated method stub
+        // TODO Auto-generated method stub
 
     }
 
@@ -26,7 +25,7 @@ public class BasicAccount extends AAccount {
 	public double getInterestAmount() {
 		// TODO Auto-generated method stub
 		return 0;
-	}
+    }
 
 //	@Override
 //	public AParty getParty() {

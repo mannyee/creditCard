@@ -1,6 +1,6 @@
 package org.mum.asd.framework.gui.CommonForm;
 
-public class JDialog_Dialogview extends javax.swing.JDialog {
+public class AccountDialog extends javax.swing.JDialog {
 
     private AccountFrm parentframe;
     private String accnr;
@@ -13,7 +13,7 @@ public class JDialog_Dialogview extends javax.swing.JDialog {
         this.accnr = accnr;
     }
 
-    public JDialog_Dialogview(AccountFrm parent, String aaccnr) {
+    public AccountDialog(AccountFrm parent, String aaccnr) {
         super(parent);
         parentframe = parent;
         accnr = aaccnr;
