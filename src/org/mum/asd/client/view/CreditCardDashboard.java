@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import org.mum.asd.client.controller.CardAddController;
 import org.mum.asd.client.controller.DepositeController;
 import org.mum.asd.client.enums.CardAccountType;
+import org.mum.asd.client.model.CreditCardAccount;
 import org.mum.asd.client.model.CreditCardFactory;
 import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.AccountManager.IAccount;
@@ -96,8 +97,6 @@ public class CreditCardDashboard extends AccountFrm {
 
     @Override
     public void loadTableWithData() {
-
-
         model.setRowCount(0);
         AccountManager ac = AppInitiator.getAccManger();
         for (IAccount acc : ac.getAccountList()) {
@@ -107,8 +106,8 @@ public class CreditCardDashboard extends AccountFrm {
            
             rowdata[1] = acc.getAcctNumber();
 
-            rowdata[2] = "";
-            rowdata[3] = aParty.getType();
+            rowdata[2] = ((CreditCardAccount)acc).getExpiryDate();
+            rowdata[3] = acc.getType();
             rowdata[5] = acc.getBalance();
             model.addRow(rowdata);
         }
