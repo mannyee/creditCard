@@ -59,7 +59,10 @@ public class AccountManager implements ISenderColleague {
         account.setBalance(balance);
 
         IPredicate p = account.getParty().getWithdrawPredicate();
-        IFunctor f = new NegativeBalanceFunctor();
+        IFunctor f = new NewBalanceFunctor();
+        if(balance<1){
+            f = new NegativeBalanceFunctor();
+        }
         account.getParty().sendEmail(f, p, account.getBalance());
 
         
