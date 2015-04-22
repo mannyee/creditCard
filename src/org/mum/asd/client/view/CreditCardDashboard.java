@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 import org.mum.asd.client.controller.CardAddController;
 import org.mum.asd.client.controller.DepositeController;
+import org.mum.asd.client.controller.WithdrawController;
 import org.mum.asd.client.enums.CardAccountType;
 import org.mum.asd.client.model.CreditCardAccount;
 import org.mum.asd.client.model.CreditCardFactory;
@@ -66,8 +67,8 @@ public class CreditCardDashboard extends AccountFrm {
 //        JButton_CompAC.addActionListener(new BillController());
         JButton_PerAC.addActionListener(new CardAddController());
         JButton_Deposit.addActionListener(new DepositeController());
-//        JButton_Deposit.addActionListener(new DepositeController());
-//        JButton_Withdraw.addActionListener(new WithdrawController());
+        // JButton_Deposit.addActionListener(new DepositeController());
+        JButton_Withdraw.addActionListener(new WithdrawController());
     }
 
     @Override
@@ -102,12 +103,12 @@ public class CreditCardDashboard extends AccountFrm {
         AccountManager ac = AppInitiator.getAccManger();
         for (IAccount acc : ac.getAccountList()) {
             rowdata = new Object[8];
-             AParty aParty = (AParty) acc.getParty();
+            AParty aParty = (AParty) acc.getParty();
             rowdata[0] = aParty.getName();
-           
+
             rowdata[1] = acc.getAcctNumber();
 
-            rowdata[2] = ((CreditCardAccount)acc).getExpiryDate();
+            rowdata[2] = ((CreditCardAccount) acc).getExpiryDate();
             rowdata[3] = acc.getType();
             rowdata[4] = acc.getBalance();
             model.addRow(rowdata);

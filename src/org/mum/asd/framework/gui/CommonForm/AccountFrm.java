@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import org.mum.asd.client.controller.ExitController;
 import org.mum.asd.client.controller.InterestController;
 
 import org.mum.asd.framework.AccountManager.AccountManager;
@@ -116,7 +117,7 @@ public class AccountFrm extends JFrame {
         mediator.addColleague(JButton_Addinterest);
         mediator.addColleague(table1);
 
-        // JButton_Exit.addActionListener(new ExitController());
+         JButton_Exit.addActionListener(new ExitController());
 //        JButton_PerAC.addActionListener(new AccountController());
 //        JButton_CompAC.addActionListener(new AccountController());
 //        JButton_Deposit.addActionListener(new DepositController());

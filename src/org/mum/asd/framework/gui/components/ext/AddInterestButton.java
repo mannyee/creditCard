@@ -25,7 +25,7 @@ public class AddInterestButton extends JButton implements IReceiverColleague{
 
     @Override
     public void receive(Message message) {
-        System.out.println("here");
+       // System.out.println("here");
     }
 
 }

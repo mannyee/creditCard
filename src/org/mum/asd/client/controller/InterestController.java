@@ -29,7 +29,7 @@ public class InterestController implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         try {
             accountManager.addInterest();
-            JOptionPane.showMessageDialog(AppInitiator.getAccForm(), "Add interest to all accounts?", "Add interest to all accounts", JOptionPane.WARNING_MESSAGE);
+            //  JOptionPane.showMessageDialog(AppInitiator.getAccForm(), "Add interest to all accounts?", "Add interest to all accounts", JOptionPane.WARNING_MESSAGE);
         } catch (Exception ex) {
             Logger.getLogger(InterestController.class.getName()).log(Level.SEVERE, null, ex);
         }
