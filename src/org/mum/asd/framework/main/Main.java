@@ -14,13 +14,9 @@ import org.mum.asd.framework.gui.CommonForm.AccountFrm;
  * @author dell
  */
 public class Main {
-    public static void main(String[] args) {
-        AppInitiator.getMediator();
-        AccountFrm form = new CreditCardDashboard();
-
-        AppInitiator.setAccForm(form);
-        
-        AppInitiator.getAccForm().setVisible(true);
+    
+    public static void initializeApp(){
+         AppInitiator.getAccForm().setVisible(true);
         
     }
 }

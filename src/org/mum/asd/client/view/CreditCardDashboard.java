@@ -20,6 +20,7 @@ import org.mum.asd.framework.factory.AppFactory;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.gui.components.ext.AccountEntryDataModel;
 import org.mum.asd.framework.main.AppInitiator;
+import org.mum.asd.framework.main.Main;
 import org.mum.asd.framework.mediator.Mediator;
 import org.mum.asd.framework.mediator.Message;
 import org.mum.asd.framework.partyPattern.AParty;
@@ -27,20 +28,16 @@ import org.mum.asd.framework.partyPattern.AParty;
 public class CreditCardDashboard extends AccountFrm {
 
     private Mediator mediator;
+    public static CreditCardDashboard creditCard;
 
     static {
         AppFactory.addAbstractFactory(CardAccountType.MAINACC, new CreditCardFactory());
-
+        creditCard = new CreditCardDashboard();
     }
-
-    public static CreditCardDashboard creditCard;
-
-    public static CreditCardDashboard getInstance() {
-        if (creditCard == null) {
-            creditCard = new CreditCardDashboard();
-            AppInitiator.setAccForm(creditCard);
-        }
-        return creditCard;
+    
+    public static void main(String[] args) {
+        AppInitiator.setAccForm(creditCard);
+        Main.initializeApp();
     }
 
     public CreditCardDashboard() {
