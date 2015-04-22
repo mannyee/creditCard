@@ -19,7 +19,7 @@ public abstract class AParty implements IParty {
     private List<IAccount> accountList;
     
     public AParty() {
-    	accountList = new ArrayList<>();
+    	accountList = new ArrayList<IAccount>();
 	}
 
     public String getName() {
