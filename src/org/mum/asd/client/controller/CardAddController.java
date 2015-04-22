@@ -33,7 +33,7 @@ public class CardAddController implements BaseController {
             aAccount.setExpiryDate(expdate);
         } catch (IllegalArgumentException e) {
             System.err.println("IllegalArgumentException in setDateOfBirth");
-            aAccount.setExpiryDate("08/08/2014");
+            aAccount.setExpiryDate("01/01/2018");
         }
         account = aAccount;
 

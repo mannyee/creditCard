@@ -3,14 +3,14 @@ package org.mum.asd.client.model;
 import org.mum.asd.framework.AccountManager.AAccount;
 import org.mum.asd.framework.transaction.ITransaction;
 
-public class CreditCardAccount extends AAccount{
+public abstract class CreditCardAccount extends AAccount {
 
     String expiryDate;
     double lastMonthBalance;
 
     public CreditCardAccount() {
     }
-    
+
     @Override
     public double getInterestAmount() {
         return 10;
@@ -32,11 +32,13 @@ public class CreditCardAccount extends AAccount{
         this.lastMonthBalance = lastMonthBalance;
     }
 
-	@Override
-	public void addEntry(ITransaction transaction) {
+    @Override
+    public void addEntry(ITransaction transaction) {
 		// TODO Auto-generated method stub
-		
-	}
-        
-    
+
+    }
+
+    public abstract double getMi();
+
+    public abstract double getMp();
 }

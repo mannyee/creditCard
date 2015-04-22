@@ -18,7 +18,7 @@ public abstract class AAccount implements IAccount {
 
     private String acctNumber;
     private List<ITransaction> transactions;
-    private Double balance=0.0;
+    private Double balance = 0.0;
     private IParty iParty;
     private String type;
 
@@ -45,7 +45,7 @@ public abstract class AAccount implements IAccount {
 
     @Override
     public void setBalance(Double balance) {
-        
+
         this.balance = balance;
     }
 

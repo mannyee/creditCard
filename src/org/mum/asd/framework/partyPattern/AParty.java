@@ -15,10 +15,10 @@ public abstract class AParty implements IParty {
     private String email;
     private String type;
     private List<IAccount> accountList;
-    
+
     public AParty() {
-    	accountList = new ArrayList<>();
-	}
+        accountList = new ArrayList<IAccount>();
+    }
 
     public String getName() {
         return name;
@@ -75,13 +75,11 @@ public abstract class AParty implements IParty {
     public void setType(String type) {
         this.type = type;
     }
-    
+
     @Override
     public void addAccount(IAccount account) {
         this.accountList.add(account);
         account.setParty(this);
     }
-
-
 
 }

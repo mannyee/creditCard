@@ -22,7 +22,7 @@ public interface IAccount {
     public Double getBalance();
 
     public String getAcctNumber();
-    
+
     public void setAcctNumber(String accNum);
 
     public IParty getParty();
@@ -31,6 +31,7 @@ public interface IAccount {
 
     public String getType();
 
-	double getInterestAmount();
+    double getInterestAmount();
+    
 
 }
