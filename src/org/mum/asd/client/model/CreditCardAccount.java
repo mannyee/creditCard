@@ -32,12 +32,7 @@ public abstract class CreditCardAccount extends AAccount {
         this.lastMonthBalance = lastMonthBalance;
     }
 
-    @Override
-    public void addEntry(ITransaction transaction) {
-		// TODO Auto-generated method stub
-
-    }
-
+   
     public abstract double getMi();
 
     public abstract double getMp();

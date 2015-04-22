@@ -65,6 +65,7 @@ public abstract class AAccount implements IAccount {
     @Override
     public void addEntry(ITransaction transaction) {
     	transactions.add(transaction);
+    	
     }
     
     
@@ -75,6 +76,8 @@ public abstract class AAccount implements IAccount {
         myBuilder.append(this.toString() + "\n");
         myBuilder.append("::: Transaction(s) History :::\n");
         
+        
+        System.out.println("size: " + this.transactions.size());
         
         for(ITransaction txn : this.transactions){
         	myBuilder.append(txn.getTxnType() + " => " + txn.getAmount() + "\n");
