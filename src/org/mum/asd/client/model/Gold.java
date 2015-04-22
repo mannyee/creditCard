@@ -29,4 +29,10 @@ public class Gold extends CreditCardAccount {
 	public void setMp(double mp) {
 		this.mp = mp;
 	}
+
+	@Override
+	public Double getInterest() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

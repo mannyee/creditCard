@@ -3,18 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.mum.asd.framework.transaction;
+package org.mum.asd.framework.functors;
 
 /**
  *
  * @author dell
  */
-public class WithDrawl extends ATransaction{
+public interface IFunctor<T> {
 
-	private final String TXNTYPE = "Withdraw";
-	
-	
-	public String getTxnType(){
-		return TXNTYPE;
-	}
+    public void compute(T t);
 }

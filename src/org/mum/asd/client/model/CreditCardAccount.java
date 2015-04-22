@@ -11,7 +11,7 @@ public abstract class CreditCardAccount extends AAccount {
     public CreditCardAccount() {
     }
 
-    @Override
+    
     public double getInterestAmount() {
         return 10;
     }

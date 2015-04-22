@@ -20,4 +20,6 @@ public interface ITransaction {
     public void setName(String name);
 
     public void setAccount(IAccount account);
+    
+    public String getTxnType();
 }

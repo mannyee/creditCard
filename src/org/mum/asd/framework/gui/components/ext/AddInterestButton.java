@@ -14,7 +14,7 @@ import org.mum.asd.framework.mediator.Message;
  *
  * @author sudell
  */
-public class AddInterestButton extends JButton implements IReceiverColleague{
+public class AddInterestButton extends JButton implements IReceiverColleague {
 
     private static final String NAME = "ADD_INTEREST_BUTTON";
     private Mediator mediator;
@@ -25,7 +25,9 @@ public class AddInterestButton extends JButton implements IReceiverColleague{
 
     @Override
     public void receive(Message message) {
-       // System.out.println("here");
+        if (message.getAbout().equalsIgnoreCase(Message.ACCOUNT_SELECTED)) {
+            this.setEnabled(message.isStatus());
+        }
     }
 
 }

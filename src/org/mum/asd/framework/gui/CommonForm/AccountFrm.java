@@ -117,7 +117,7 @@ public class AccountFrm extends JFrame {
         mediator.addColleague(JButton_Addinterest);
         mediator.addColleague(table1);
 
-         JButton_Exit.addActionListener(new ExitController());
+        JButton_Exit.addActionListener(new ExitController());
 //        JButton_PerAC.addActionListener(new AccountController());
 //        JButton_CompAC.addActionListener(new AccountController());
 //        JButton_Deposit.addActionListener(new DepositController());
@@ -190,7 +190,6 @@ public class AccountFrm extends JFrame {
     }
 
     public void loadTableWithData() {
-        System.out.println("inside the loadTable");
 
         model.setRowCount(0);
         AccountManager ac = AppInitiator.getAccManger();

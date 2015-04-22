@@ -3,16 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.mum.asd.framework.transaction;
+package org.mum.asd.framework.predicates;
 
 /**
  *
- * @author dell
+ * @author james
  */
-public class Deposite extends ATransaction {
-	private final String TXNTYPE = "Deposit";
+public interface IPredicate<T> {
 
-	public String getTxnType() {
-		return TXNTYPE;
-	}
+    public boolean check(T t);
 }

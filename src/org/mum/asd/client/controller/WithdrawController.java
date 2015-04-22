@@ -1,11 +1,13 @@
 package org.mum.asd.client.controller;
 
 import com.sun.xml.internal.ws.wsdl.writer.document.Types;
+
 import java.awt.event.ActionEvent;
+
 import org.mum.asd.client.view.creditCard.WithdrawDialog;
+import org.mum.asd.framework.AccountManager.AAccount;
 import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.AccountManager.IAccount;
-
 import org.mum.asd.framework.controller.BaseController;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.main.AppInitiator;
@@ -37,7 +39,7 @@ public class WithdrawController implements BaseController {
             ITransaction iTransaction = new WithDrawl();
             iTransaction.setAmount(Double.parseDouble(amount));
             iTransaction.setName(name);
-            accountManager.withDraw(account, iTransaction);
+            accountManager.withDraw((AAccount)account, (ATransaction)iTransaction);
         } catch (Exception e) {
             e.printStackTrace();
         }

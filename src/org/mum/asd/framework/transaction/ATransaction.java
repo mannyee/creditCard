@@ -12,7 +12,7 @@ import org.mum.asd.framework.AccountManager.IAccount;
  *
  * @author dell
  */
-public class ATransaction implements ITransaction{
+public abstract class ATransaction implements ITransaction{
 
     private Double amount;
     private String name;
@@ -53,7 +53,7 @@ public class ATransaction implements ITransaction{
     @Override
     public void setAccount(IAccount account) {
         this.account = account;
-        account.addEntry(this);
+        //account.addEntry(this);
     }
 
 

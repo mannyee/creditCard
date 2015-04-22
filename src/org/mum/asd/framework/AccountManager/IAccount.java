@@ -5,7 +5,6 @@
  */
 package org.mum.asd.framework.AccountManager;
 
-import java.util.Date;
 import org.mum.asd.framework.partyPattern.IParty;
 import org.mum.asd.framework.transaction.ITransaction;
 
@@ -31,7 +30,7 @@ public interface IAccount {
 
     public String getType();
 
-    double getInterestAmount();
+    public Double getInterest();
     
-
+    public StringBuilder generateReport();
 }

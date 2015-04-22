@@ -30,5 +30,11 @@ public class Bronze extends CreditCardAccount {
         this.mp = mp;
     }
 
+	@Override
+	public Double getInterest() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
     
 }

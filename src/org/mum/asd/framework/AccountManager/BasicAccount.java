@@ -5,10 +5,6 @@ import org.mum.asd.framework.transaction.ITransaction;
 
 public class BasicAccount extends AAccount {
 
-    @Override
-    public void addEntry(ITransaction transaction) {
-        // TODO Auto-generated method stub
-    }
 
     public double getCurrentBalance() {
         // TODO Auto-generated method stub
@@ -21,15 +17,14 @@ public class BasicAccount extends AAccount {
 
     }
 
-	@Override
-	public double getInterestAmount() {
-		// TODO Auto-generated method stub
-		return 0;
+    @Override
+    public Double getInterest() {
+        return 5d;
     }
-
-//	@Override
-//	public AParty getParty() {
-//		// TODO Auto-generated method stub
-//		return (AParty)this;
-//	}
+//
+//    @Override
+//    public AParty getParty() {
+//        // TODO Auto-generated method stub
+//        return (AParty) this;
+//    }
 }

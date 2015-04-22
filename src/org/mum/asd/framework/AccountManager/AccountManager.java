@@ -1,20 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.mum.asd.framework.AccountManager;
 
+import org.mum.asd.framework.functors.IFunctor;
+import org.mum.asd.framework.functors.NegativeBalanceFunctor;
+import org.mum.asd.framework.functors.NewBalanceFunctor;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import org.mum.asd.client.model.CreditCardAccount;
+
+import org.mum.asd.framework.enums.Types;
 import org.mum.asd.framework.mediator.IColleague;
 import org.mum.asd.framework.mediator.ISenderColleague;
 import org.mum.asd.framework.mediator.Mediator;
 import org.mum.asd.framework.mediator.Message;
+import org.mum.asd.framework.transaction.ATransaction;
 import org.mum.asd.framework.transaction.ITransaction;
+import org.mum.asd.framework.transaction.WithDrawl;
 import org.mum.asd.framework.partyPattern.AParty;
 import org.mum.asd.framework.partyPattern.IParty;
+import org.mum.asd.framework.predicates.IPredicate;
+import org.mum.asd.framework.predicates.NegativeBalancePredicate;
+import org.mum.asd.framework.predicates.Person500DepositPredicate;
 import org.mum.asd.framework.transaction.Deposite;
 
 public class AccountManager implements ISenderColleague {
@@ -35,13 +40,9 @@ public class AccountManager implements ISenderColleague {
 
     public void addAccountToList(IAccount account) {
         AParty a = (AParty) account.getParty();
-        System.out.println("a ++" + a);
         IParty c = account.getParty();
-        System.out.println("c+++" + c);
-        // Company c=account.getParty();
         this.listOfAccount.add(account);
         this.send(new Message(Message.UPDATE_ACCOUNT_TABLE, true));
-//        updateAccountTable();
     }
 
     public AAccount getAccountById(String id) {
@@ -53,29 +54,60 @@ public class AccountManager implements ISenderColleague {
         return null;
     }
 
-    public void withDraw(IAccount account, ITransaction transaction) {
+	public void withDraw(IAccount account, ATransaction transaction) {
         double balance = account.getBalance() - transaction.getAmount();
         account.setBalance(balance);
+
+        IPredicate p = account.getParty().getWithdrawPredicate();
+        IFunctor f = new NegativeBalanceFunctor();
+        account.getParty().sendEmail(f, p, account.getBalance());
+
+        
+        ITransaction deposit = new WithDrawl();//FactoryProducer.getFactory(Types.TRANSACTION).getTransaction(TransactionType.DEPOSIT);
+       
+        deposit.setName(transaction.getName());
+        deposit.setAccount(account);
+         deposit.setAmount(transaction.getAmount());
+        account.addEntry(deposit);
+        
+
         this.send(new Message(Message.UPDATE_ACCOUNT_TABLE, true));
+        
     }
 
-    public void deposite(IAccount account, ITransaction transaction) {
+    public void deposite(AAccount account, ATransaction transaction) {
         double balance = account.getBalance() + transaction.getAmount();
         account.setBalance(balance);
+
+        IPredicate p = account.getParty().getDepositPredicate();
+        IFunctor f = new NewBalanceFunctor();
+        account.getParty().sendEmail(f, p, account.getBalance());
+
+        ITransaction withdraw = new Deposite();//FactoryProducer.getFactory(Types.TRANSACTION).getTransaction(TransactionType.DEPOSIT);
+        
+        withdraw.setName(transaction.getName());
+        withdraw.setAccount(account);
+        withdraw.setAmount(transaction.getAmount());
+        account.addEntry(withdraw);
+        
+
         this.send(new Message(Message.UPDATE_ACCOUNT_TABLE, true));
     }
 
     public void addInterest() {
         for (IAccount account : listOfAccount) {
-            //ITransaction deposit = new Deposite();//FactoryProducer.getFactory(Types.TRANSACTION).getTransaction(TransactionType.DEPOSIT);
-            double monthlyInterest = ((CreditCardAccount) account).getMi();
-            double minPayment = ((CreditCardAccount) account).getMp();
-
-            double newBalance = account.getBalance() - account.getBalance() * (0.01 * (monthlyInterest)) - minPayment;
-
+            double interestRate = account.getInterest();
+            ITransaction deposit = new Deposite();//FactoryProducer.getFactory(Types.TRANSACTION).getTransaction(TransactionType.DEPOSIT);
+            //deposit.setupTransaction(this, account);
+            //deposit.setName(Deposite.DEPOSIT_INTEREST);
+            //deposit.setName("Deposit_Interest");
+            // deposit.setAmount(interestAmount);
+            // transactionManager.execute(deposit);
+            double newBalance = account.getBalance() + account.getBalance() * interestRate * 0.01;
             account.setBalance(newBalance);
             this.send(new Message(Message.UPDATE_ACCOUNT_TABLE, true));
         }
+        //  this.updateAccountTable();
     }
 
     @Override
@@ -91,5 +123,17 @@ public class AccountManager implements ISenderColleague {
     public void updateAccountTable() {
         this.send(new Message(Message.UPDATE_ACCOUNT_TABLE, true));
     }
+    
 
+    
+    public StringBuilder generateReport() {
+        StringBuilder myBuilder = new StringBuilder();
+        
+        for(IAccount account : listOfAccount){
+        	myBuilder.append("\n" + account.generateReport().toString());
+        }
+        
+        return myBuilder;
+    }
+    
 }

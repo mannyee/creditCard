@@ -7,6 +7,7 @@ package org.mum.asd.client.view;
 
 import java.awt.event.ActionListener;
 
+import org.mum.asd.client.controller.MonthlyReportController;
 import org.mum.asd.client.controller.CardAddController;
 import org.mum.asd.client.controller.DepositeController;
 import org.mum.asd.client.controller.WithdrawController;
@@ -64,7 +65,7 @@ public class CreditCardDashboard extends AccountFrm {
             JButton_Withdraw.removeActionListener(al);
         }
 
-//        JButton_CompAC.addActionListener(new BillController());
+        JButton_CompAC.addActionListener(new MonthlyReportController());
         JButton_PerAC.addActionListener(new CardAddController());
         JButton_Deposit.addActionListener(new DepositeController());
         // JButton_Deposit.addActionListener(new DepositeController());
