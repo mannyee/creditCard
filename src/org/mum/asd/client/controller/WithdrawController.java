@@ -1,7 +1,5 @@
 package org.mum.asd.client.controller;
 
-import com.sun.xml.internal.ws.wsdl.writer.document.Types;
-
 import java.awt.event.ActionEvent;
 
 import org.mum.asd.client.view.creditCard.WithdrawDialog;
