@@ -8,7 +8,7 @@ package org.mum.asd.framework.predicates;
 
 /**
  *
- * @author dhruba
+ * @author Raj
  */
 public class Person500DepositPredicate implements IPredicate<Double> {
 

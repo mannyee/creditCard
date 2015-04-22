@@ -12,7 +12,7 @@ import org.mum.asd.framework.mediator.IMediator;
 
 /**
  *
- * @author sudell
+ * @author xtrememe
  */
 public class Mediator implements IMediator {
 

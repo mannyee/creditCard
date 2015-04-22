@@ -7,7 +7,7 @@ package org.mum.asd.framework.predicates;
 
 /**
  *
- * @author james
+ * @author dell
  */
 public interface IPredicate<T> {
 

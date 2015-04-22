@@ -12,7 +12,7 @@ import org.mum.asd.framework.mediator.Message;
 
 /**
  *
- * @author sudell
+ * @author xtrememe
  */
 public class AddInterestButton extends JButton implements IReceiverColleague {
 

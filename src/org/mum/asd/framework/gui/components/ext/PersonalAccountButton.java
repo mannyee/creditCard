@@ -11,7 +11,7 @@ import javax.swing.JButton;
 
 /**
  *
- * @author sudell
+ * @author xtrememe
  */
 public class PersonalAccountButton extends JButton {
 

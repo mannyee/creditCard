@@ -15,7 +15,7 @@ import org.mum.asd.framework.mediator.Message;
 
 /**
  *
- * @author sudell
+ * @author xtrememe
  */
 public class AccountListTable extends ASDTable implements IReceiverColleague{
 

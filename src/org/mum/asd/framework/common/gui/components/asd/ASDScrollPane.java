@@ -9,7 +9,7 @@ import javax.swing.JScrollPane;
 
 /**
  *
- * @author sudell
+ * @author xtrememe
  */
 public class ASDScrollPane extends JScrollPane {
 
