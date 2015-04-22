@@ -5,6 +5,8 @@
  */
 package org.mum.asd.framework.functors;
 
+import javax.swing.JOptionPane;
+import org.mum.asd.framework.main.AppInitiator;
 import org.mum.asd.framework.partyPattern.IParty;
 
 
@@ -16,6 +18,8 @@ public class NegativeBalanceFunctor implements IFunctor<IParty> {
 
     @Override
     public void compute(IParty p) {
-        System.out.println("Your balance is negative: " + p.getBalance());
+//        System.out.println("Your balance is negative: " + p.getBalance());
+                JOptionPane.showMessageDialog(AppInitiator.getAccForm(), "Your balance is negative: " + p.getBalance(), "Email ALert", JOptionPane.WARNING_MESSAGE);
+
     }
 }
