@@ -18,10 +18,6 @@ public class Company extends AParty implements ICompany {
     private Integer employeeNumber;
     private final String type = "C";
 
-    public double getBalance() {
-        return 0d;
-    }
-
     public Integer getEmployeeNumber() {
         return employeeNumber;
     }

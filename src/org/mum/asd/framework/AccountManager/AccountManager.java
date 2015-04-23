@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package org.mum.asd.framework.AccountManager;
 
 import org.mum.asd.framework.functors.IFunctor;
@@ -6,7 +11,6 @@ import org.mum.asd.framework.functors.NewBalanceFunctor;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import org.mum.asd.client.model.CreditCardAccount;
 
 import org.mum.asd.framework.enums.Types;
 import org.mum.asd.framework.mediator.IColleague;
@@ -66,15 +70,17 @@ public class AccountManager implements ISenderColleague {
         }
         account.getParty().sendEmail(f, p, account.getBalance());
 
+        
         ITransaction deposit = new WithDrawl();//FactoryProducer.getFactory(Types.TRANSACTION).getTransaction(TransactionType.DEPOSIT);
-
+       
         deposit.setName(transaction.getName());
         deposit.setAccount(account);
-        deposit.setAmount(transaction.getAmount());
+         deposit.setAmount(transaction.getAmount());
         account.addEntry(deposit);
+        
 
         this.send(new Message(Message.UPDATE_ACCOUNT_TABLE, true));
-
+        
     }
 
     public void deposite(AAccount account, ATransaction transaction) {
@@ -86,27 +92,26 @@ public class AccountManager implements ISenderColleague {
         account.getParty().sendEmail(f, p, transaction.getAmount());
 
         ITransaction withdraw = new Deposite();//FactoryProducer.getFactory(Types.TRANSACTION).getTransaction(TransactionType.DEPOSIT);
-
+        
         withdraw.setName(transaction.getName());
         withdraw.setAccount(account);
         withdraw.setAmount(transaction.getAmount());
         account.addEntry(withdraw);
+        
 
         this.send(new Message(Message.UPDATE_ACCOUNT_TABLE, true));
     }
 
     public void addInterest() {
         for (IAccount account : listOfAccount) {
-            account = (CreditCardAccount) account;
-            //  double interestRate = account.getInterest();
+            double interestRate = account.getInterest();
             ITransaction deposit = new Deposite();//FactoryProducer.getFactory(Types.TRANSACTION).getTransaction(TransactionType.DEPOSIT);
             //deposit.setupTransaction(this, account);
             //deposit.setName(Deposite.DEPOSIT_INTEREST);
             //deposit.setName("Deposit_Interest");
             // deposit.setAmount(interestAmount);
             // transactionManager.execute(deposit);
-            //double newBalance = account.getBalance() + account.getBalance() * account.get * 0.01;
-            double newBalance = account.getBalance() + account.getBalance() * (((CreditCardAccount) account).getMi() + ((CreditCardAccount) account).getMp()) * 0.01;
+            double newBalance = account.getBalance() + account.getBalance() * interestRate * 0.01;
             account.setBalance(newBalance);
             this.send(new Message(Message.UPDATE_ACCOUNT_TABLE, true));
         }
@@ -126,15 +131,17 @@ public class AccountManager implements ISenderColleague {
     public void updateAccountTable() {
         this.send(new Message(Message.UPDATE_ACCOUNT_TABLE, true));
     }
+    
 
+    
     public StringBuilder generateReport() {
         StringBuilder myBuilder = new StringBuilder();
-
-        for (IAccount account : listOfAccount) {
-            myBuilder.append("\n" + account.generateReport().toString());
+        
+        for(IAccount account : listOfAccount){
+        	myBuilder.append("\n" + account.generateReport().toString());
         }
-
+        
         return myBuilder;
     }
-
+    
 }

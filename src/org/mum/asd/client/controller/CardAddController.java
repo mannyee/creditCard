@@ -4,12 +4,13 @@ import java.awt.event.ActionEvent;
 
 import org.mum.asd.client.enums.CardAccountType;
 import org.mum.asd.client.model.CreditCardAccount;
+import org.mum.asd.client.model.CreditCardFactory;
 import org.mum.asd.client.view.CardAddDialog;
 import org.mum.asd.framework.AccountManager.IAccount;
 import org.mum.asd.framework.controller.BaseController;
 import org.mum.asd.framework.enums.PartyType;
 import org.mum.asd.framework.enums.Types;
-import org.mum.asd.framework.factory.AppFactory;
+import org.mum.asd.framework.factory.PartyFactory;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.main.AppInitiator;
 import org.mum.asd.framework.partyPattern.IParty;
@@ -26,7 +27,7 @@ public class CardAddController implements BaseController {
     }
 
     public void createAccount(CardAccountType accountType, String name, String city, String state, String street, String zip, String accNum, String expdate, String email) {
-        IAccount account = AppFactory.getFactory(CardAccountType.MAINACC).getAccount(accountType);
+        IAccount account = CreditCardFactory.getAccount(accountType);
         CreditCardAccount aAccount = (CreditCardAccount) account;
         aAccount.setAcctNumber(accNum);
         try {
@@ -37,7 +38,7 @@ public class CardAddController implements BaseController {
         }
         account = aAccount;
 
-        IParty party = AppFactory.getFactory(Types.PARTY).getParty(PartyType.PERSONAL);
+        IParty party = PartyFactory.getParty(PartyType.PERSONAL);
        
         Person c = (Person) party;
         c.setName(name);

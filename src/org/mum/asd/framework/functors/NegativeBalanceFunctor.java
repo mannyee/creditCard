@@ -19,7 +19,6 @@ public class NegativeBalanceFunctor implements IFunctor<IParty> {
     @Override
     public void compute(IParty p) {
 //        System.out.println("Your balance is negative: " + p.getBalance());
-                JOptionPane.showMessageDialog(AppInitiator.getAccForm(), "Your balance is negative: " + p.getBalance(), "Email ALert", JOptionPane.WARNING_MESSAGE);
-
+        JOptionPane.showMessageDialog(AppInitiator.getAccForm(), "Your balance is negative: " + p.getBalance(), "Email ALert", JOptionPane.WARNING_MESSAGE);
     }
 }

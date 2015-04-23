@@ -16,31 +16,29 @@ import org.mum.asd.client.model.CreditCardAccount;
 import org.mum.asd.client.model.CreditCardFactory;
 import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.AccountManager.IAccount;
-import org.mum.asd.framework.factory.AppFactory;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.gui.components.ext.AccountEntryDataModel;
 import org.mum.asd.framework.main.AppInitiator;
-import org.mum.asd.framework.main.Main;
+import org.mum.asd.framework.main.FinCo;
 import org.mum.asd.framework.mediator.Mediator;
 import org.mum.asd.framework.mediator.Message;
 import org.mum.asd.framework.partyPattern.AParty;
 
-public class CreditCardDashboard extends AccountFrm {
+public class CCard extends AccountFrm {
 
     private Mediator mediator;
-    public static CreditCardDashboard creditCard;
+    public static CCard creditCard;
 
     static {
-        AppFactory.addAbstractFactory(CardAccountType.MAINACC, new CreditCardFactory());
-        creditCard = new CreditCardDashboard();
+        creditCard = new CCard();
     }
     
     public static void main(String[] args) {
         AppInitiator.setAccForm(creditCard);
-        Main.initializeApp();
+        FinCo.initializeApp();
     }
 
-    public CreditCardDashboard() {
+    public CCard() {
         mediator = AppInitiator.getMediator();
         setTitle("Credit Card Application");
 

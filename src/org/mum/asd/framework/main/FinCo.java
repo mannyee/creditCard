@@ -5,15 +5,11 @@
  */
 package org.mum.asd.framework.main;
 
-import org.mum.asd.client.view.CreditCardDashboard;
-import org.mum.asd.framework.AccountManager.AccountManager;
-import org.mum.asd.framework.gui.CommonForm.AccountFrm;
-
 /**
  *
  * @author dell
  */
-public class Main {
+public class FinCo {
     
     public static void initializeApp(){
          AppInitiator.getAccForm().setVisible(true);

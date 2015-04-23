@@ -39,9 +39,6 @@ public class Person extends AParty implements IPerson{
         return type;
     }
 
-    
-    
-	
 	
     @Override
     public void sendEmail(IFunctor f, IPredicate p, double amount) {

@@ -10,11 +10,10 @@ import java.awt.event.ActionEvent;
 import org.mum.asd.client.view.DepositeDialog;
 import org.mum.asd.framework.AccountManager.AAccount;
 import org.mum.asd.framework.AccountManager.AccountManager;
-import org.mum.asd.framework.AccountManager.BasicAccount;
 import org.mum.asd.framework.AccountManager.IAccount;
 import org.mum.asd.framework.controller.BaseController;
-import org.mum.asd.framework.gui.CommonForm.AccountDialog;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
+import org.mum.asd.framework.gui.CommonForm.TransactionDialog;
 import org.mum.asd.framework.main.AppInitiator;
 import org.mum.asd.framework.transaction.ATransaction;
 import org.mum.asd.framework.transaction.ITransaction;
@@ -35,8 +34,8 @@ public class DepositeController implements BaseController {
     @Override
     public void actionPerformed(ActionEvent ae) {
         AccountFrm accountFrm = AppInitiator.getAccForm();
-         String accnr = accountFrm.getAccountNo();
-        AccountDialog dialog = new DepositeDialog(accountFrm, accnr);
+        String accnr = accountFrm.getAccountNo();
+        TransactionDialog dialog = new DepositeDialog(accountFrm, accnr);
         dialog.setBounds(430, 15, 275, 140);
         dialog.show();
     }

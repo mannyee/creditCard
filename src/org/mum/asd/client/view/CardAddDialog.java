@@ -4,10 +4,10 @@ import java.awt.event.ActionEvent;
 
 import org.mum.asd.client.controller.CardAddController;
 import org.mum.asd.client.enums.CardAccountType;
+import org.mum.asd.framework.gui.CommonForm.AccountDialog;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
-import org.mum.asd.framework.gui.CommonForm.JDialog_AddAccount;
 
-public class CardAddDialog extends JDialog_AddAccount {
+public class CardAddDialog extends AccountDialog {
 
     protected javax.swing.JRadioButton JRadioButton_Bronze = new javax.swing.JRadioButton();
     

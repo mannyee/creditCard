@@ -6,14 +6,14 @@
 package org.mum.asd.client.view;
 
 import org.mum.asd.client.controller.DepositeController;
-import org.mum.asd.framework.gui.CommonForm.AccountDialog;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
+import org.mum.asd.framework.gui.CommonForm.TransactionDialog;
 
 /**
  *
  * @author dell
  */
-public class DepositeDialog extends AccountDialog {
+public class DepositeDialog extends TransactionDialog {
 
     public DepositeDialog(AccountFrm parent, String aaccnr) {
         super(parent, aaccnr);

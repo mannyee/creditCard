@@ -2,15 +2,13 @@ package org.mum.asd.client.model;
 
 import org.mum.asd.client.enums.CardAccountType;
 import org.mum.asd.framework.AccountManager.IAccount;
-import org.mum.asd.framework.factory.AccountFactory;
 
-public class CreditCardFactory extends AccountFactory{
+public class CreditCardFactory{
 	
 	public CreditCardFactory() {
     }
 
-    @Override
-    public IAccount getAccount(Enum type) {
+    public static IAccount getAccount(Enum type) {
        if (type == CardAccountType.GOLD) {
             return new Gold();
         } else if (type == CardAccountType.SILVER) {

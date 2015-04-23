@@ -19,6 +19,7 @@ public class NewBalanceFunctor implements IFunctor<IParty> {
     @Override
     public void compute(IParty p) {
 //        System.out.println("Email: Your new balance is: " + p.getBalance());
-        JOptionPane.showMessageDialog(AppInitiator.getAccForm(), "Email: Your new balance is: " + p.getBalance(), "Email ALert", JOptionPane.WARNING_MESSAGE);
+          JOptionPane.showMessageDialog(AppInitiator.getAccForm(), "Email: Your new balance is: " + p.getBalance(), "Email ALert", JOptionPane.WARNING_MESSAGE);
+
     }
 }
