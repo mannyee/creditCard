@@ -32,7 +32,6 @@ public class Gold extends CreditCardAccount {
 
 	@Override
 	public Double getInterest() {
-		// TODO Auto-generated method stub
-		return null;
+		return getMp()+getMi();
 	}
 }

@@ -2,8 +2,8 @@ package org.mum.asd.creditcard.model;
 
 public class Silver extends CreditCardAccount {
 
-    public double mi=0.08,mp=0.12;   
-    
+    public double mi = 0.08, mp = 0.12;
+
     @Override
     public String getType() {
         return "Silver";
@@ -30,11 +30,9 @@ public class Silver extends CreditCardAccount {
         this.mp = mp;
     }
 
-	@Override
-	public Double getInterest() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public Double getInterest() {
+        return getMp() + getMi();
+    }
 
-    
 }
