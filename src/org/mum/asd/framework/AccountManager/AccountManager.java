@@ -83,7 +83,7 @@ public class AccountManager implements ISenderColleague {
 
         IPredicate p = account.getParty().getDepositPredicate();
         IFunctor f = new NewBalanceFunctor();
-        account.getParty().sendEmail(f, p, account.getBalance());
+        account.getParty().sendEmail(f, p, transaction.getAmount());
 
         ITransaction withdraw = new Deposite();//FactoryProducer.getFactory(Types.TRANSACTION).getTransaction(TransactionType.DEPOSIT);
 

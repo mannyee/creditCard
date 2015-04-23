@@ -41,11 +41,7 @@ public class Person extends AParty implements IPerson{
 
     
     
-	@Override
-	public double getBalance() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 	
     @Override
     public void sendEmail(IFunctor f, IPredicate p, double amount) {
