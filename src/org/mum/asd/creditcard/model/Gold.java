@@ -1,4 +1,4 @@
-package org.mum.asd.client.model;
+package org.mum.asd.creditcard.model;
 
 public class Gold extends CreditCardAccount {
 

@@ -1,12 +1,12 @@
-package org.mum.asd.client.model;
+package org.mum.asd.creditcard.model;
 
-public class Silver extends CreditCardAccount {
+public class Bronze extends CreditCardAccount {
 
-    public double mi=0.08,mp=0.12;   
+    public double mi=0.10,mp=0.14;   
     
     @Override
     public String getType() {
-        return "Silver";
+        return "Bronze";
     }
 
     @Override

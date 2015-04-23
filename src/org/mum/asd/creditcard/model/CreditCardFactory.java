@@ -1,6 +1,6 @@
-package org.mum.asd.client.model;
+package org.mum.asd.creditcard.model;
 
-import org.mum.asd.client.enums.CardAccountType;
+import org.mum.asd.creditcard.enums.CardAccountType;
 import org.mum.asd.framework.AccountManager.IAccount;
 
 public class CreditCardFactory{

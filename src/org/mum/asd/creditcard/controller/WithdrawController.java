@@ -1,8 +1,8 @@
-package org.mum.asd.client.controller;
+package org.mum.asd.creditcard.controller;
 
 import java.awt.event.ActionEvent;
 
-import org.mum.asd.client.view.creditCard.WithdrawDialog;
+import org.mum.asd.creditcard.view.gui.WithdrawDialog;
 import org.mum.asd.framework.AccountManager.AAccount;
 import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.AccountManager.IAccount;

@@ -1,11 +1,11 @@
-package org.mum.asd.client.controller;
+package org.mum.asd.creditcard.controller;
 
 import java.awt.event.ActionEvent;
 
-import org.mum.asd.client.enums.CardAccountType;
-import org.mum.asd.client.model.CreditCardAccount;
-import org.mum.asd.client.model.CreditCardFactory;
-import org.mum.asd.client.view.CardAddDialog;
+import org.mum.asd.creditcard.enums.CardAccountType;
+import org.mum.asd.creditcard.model.CreditCardAccount;
+import org.mum.asd.creditcard.model.CreditCardFactory;
+import org.mum.asd.creditcard.view.CardAddDialog;
 import org.mum.asd.framework.AccountManager.IAccount;
 import org.mum.asd.framework.controller.BaseController;
 import org.mum.asd.framework.enums.PartyType;

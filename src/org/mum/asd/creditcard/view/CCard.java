@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.mum.asd.client.view;
+package org.mum.asd.creditcard.view;
 
 import java.awt.event.ActionListener;
 
-import org.mum.asd.client.controller.MonthlyReportController;
-import org.mum.asd.client.controller.CardAddController;
-import org.mum.asd.client.controller.DepositeController;
-import org.mum.asd.client.controller.WithdrawController;
-import org.mum.asd.client.enums.CardAccountType;
-import org.mum.asd.client.model.CreditCardAccount;
-import org.mum.asd.client.model.CreditCardFactory;
+import org.mum.asd.creditcard.controller.MonthlyReportController;
+import org.mum.asd.creditcard.controller.CardAddController;
+import org.mum.asd.creditcard.controller.DepositeController;
+import org.mum.asd.creditcard.controller.WithdrawController;
+import org.mum.asd.creditcard.enums.CardAccountType;
+import org.mum.asd.creditcard.model.CreditCardAccount;
+import org.mum.asd.creditcard.model.CreditCardFactory;
 import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.AccountManager.IAccount;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;

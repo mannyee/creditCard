@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.mum.asd.client.controller;
+package org.mum.asd.creditcard.controller;
 
 import java.awt.event.ActionEvent;
 
-import org.mum.asd.client.view.ReportDialog;
+import org.mum.asd.creditcard.view.ReportDialog;
 import org.mum.asd.framework.controller.BaseController;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.main.AppInitiator;

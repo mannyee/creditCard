@@ -1,4 +1,4 @@
-package org.mum.asd.client.view;
+package org.mum.asd.creditcard.view;
 
 import java.awt.Frame;
 

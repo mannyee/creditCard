@@ -1,9 +1,9 @@
-package org.mum.asd.client.view;
+package org.mum.asd.creditcard.view;
 
 import java.awt.event.ActionEvent;
 
-import org.mum.asd.client.controller.CardAddController;
-import org.mum.asd.client.enums.CardAccountType;
+import org.mum.asd.creditcard.controller.CardAddController;
+import org.mum.asd.creditcard.enums.CardAccountType;
 import org.mum.asd.framework.gui.CommonForm.AccountDialog;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 

@@ -1,4 +1,4 @@
-package org.mum.asd.client.enums;
+package org.mum.asd.creditcard.enums;
 
 public enum CardAccountType {
 	SILVER, GOLD, BROZE, MAINACC

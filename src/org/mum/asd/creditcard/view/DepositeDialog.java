@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.mum.asd.client.view;
+package org.mum.asd.creditcard.view;
 
-import org.mum.asd.client.controller.DepositeController;
+import org.mum.asd.creditcard.controller.DepositeController;
 import org.mum.asd.framework.gui.CommonForm.AccountFrm;
 import org.mum.asd.framework.gui.CommonForm.TransactionDialog;
 

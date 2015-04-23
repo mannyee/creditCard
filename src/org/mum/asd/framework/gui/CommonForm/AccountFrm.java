@@ -7,8 +7,8 @@ import java.awt.event.MouseEvent;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import org.mum.asd.client.controller.ExitController;
-import org.mum.asd.client.controller.InterestController;
+import org.mum.asd.creditcard.controller.ExitController;
+import org.mum.asd.creditcard.controller.InterestController;
 
 import org.mum.asd.framework.AccountManager.AccountManager;
 import org.mum.asd.framework.AccountManager.IAccount;

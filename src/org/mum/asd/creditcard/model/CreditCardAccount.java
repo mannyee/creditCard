@@ -1,4 +1,4 @@
-package org.mum.asd.client.model;
+package org.mum.asd.creditcard.model;
 
 import org.mum.asd.framework.AccountManager.AAccount;
 import org.mum.asd.framework.transaction.ITransaction;
